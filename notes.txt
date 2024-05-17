@@ -1,0 +1,112 @@
+By default every server follows CORS policy
+CORS: Cross Origin Resource Sharing
+Frontend: 192.168.34.22
+Backend: 192.172.18.14
+
+by default server has blocked the requests from all the clients
+in our backend application we have to specify from which client we have to accept
+the request or from which client you don't want to 
+
+We have to allow a cors policy 
+to allow the CORS policy we need to deal with request headers but if 
+we don't want to write entire code for dealing with request headers for the cors
+then we will use a module i.e. cors 
+
+
+{
+    students : [{},{},{}]
+}
+
+Grid: AG Grid, pagination
+
+condition ? v1 : v2
+
+students.length == 0 ? <Alert> : <Table>
+
+for react-router-dom v6:
+
+const navigate = useNavigate();
+navigate('/edit-student');
+
+for react-router-dom v5:
+
+const history = useHistory();
+history.push('/edit-student');
+
+
+1. AJAX: response.text
+2. const response = await fetch(): const data = await response.json() promise
+ {status:'', total:'', articles: []}
+ data.status data.total data.articles
+
+3. axios: response.data
+
+
+Steps for authentication at the frontend:
+
+1. first login component should open 
+   user will enter username and password and will click login button
+   on login button click we need to call login api 
+   Response may of two types:
+   1. login successful:
+      We will receive the token from response
+      Store token in the browser local storage
+      Redirect a user to dashboard
+   2. login fail:
+      Display an error message like username or password invalid 
+
+2. To call secure API:
+   We need to read token from localStorage and pass that token in the Authorization
+   header of the requests 
+
+3. Logout: remove the token from localStorage and redirect a user to login component
+
+4. On secure component, first we need to check for the login status by checking 
+the availability of token in localStorage.
+If token is found then redirect to the desired route 
+or else redirect a user to login component  
+
+
+
+
+Note: There may be a case where a component is not having idea like what has to be passed as the child element
+
+
+export function DialogBox(props){
+    return (
+        <div>
+            <div class="header">
+                {props.header}
+            </div>
+            <div class="body">
+                {props.children}
+            </div>
+        </div>
+    )
+}
+
+export function AlertDialog(){
+
+    return (
+
+        <DialogBox header="Confirmation">
+            <h1>User created</h1>
+        </DialogBox>
+    )
+}
+
+export functuion LoginDialog(){
+
+    return (
+        <DialogBox header="Login">
+            <form>
+                <input type="text">
+            </form>
+        </DialogBox>
+    )
+}
+
+
+
+
+

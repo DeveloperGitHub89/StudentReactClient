@@ -1,0 +1,6 @@
+export const API_BASE_URL = 'http://127.0.0.1:6800';
+export const SAVE_STUDENT_API_ROUTE = `${API_BASE_URL}/students`;
+export const GET_STUDENT_API_ROUTE = SAVE_STUDENT_API_ROUTE;
+export const REMOVE_STUDENT_API_ROUTE = SAVE_STUDENT_API_ROUTE;
+export const UPDATE_STUDENT_API_ROUTE = SAVE_STUDENT_API_ROUTE;
+export const ADMIN_LOGIN_URL = `${API_BASE_URL}/admins/login`
